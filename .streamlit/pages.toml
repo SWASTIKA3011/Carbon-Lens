@@ -1,0 +1,34 @@
+[[page]]
+name = "Homepage"
+icon = "🏠"
+path = "pages/homepage.py"
+
+[[page]]
+name = "Peatland Monitoring"
+icon = "📊"
+path = "pages/peatland2.py"
+
+[[page]]
+name = "Chatbot"
+icon = "⚙️"
+path = "pages/chatbot2.py"
+
+[[page]]
+name = "Footprint Calculator"
+icon = "⚙️"
+path = "pages/footprint3.py"
+
+[[page]]
+name = "Analyzer"
+icon = "🏠"
+path = "pages/nlp2.py"
+
+[[page]]
+name = "Business"
+icon = "📊"
+path = "pages/business.py"
+
+[[page]]
+name = "Offset"
+icon = "⚙️"
+path = "pages/credit6.py"

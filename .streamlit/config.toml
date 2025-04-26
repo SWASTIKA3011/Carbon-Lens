@@ -1,0 +1,16 @@
+[ui]
+layout = "wide"
+
+[server]
+maxUploadSize = 500
+
+[theme]
+base="light"
+#primaryColor="#007b34"
+primaryColor="#005726"
+#backgroundColor="#8faf8f"
+#backgroundColor="#acc3ac"
+#backgroundColor="#cad8ca"
+backgroundColor="#D9E3D9"
+#secondaryBackgroundColor="#d2d2d2"
+font="serif"
