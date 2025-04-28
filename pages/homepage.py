@@ -74,16 +74,17 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown('<h1 class="title">Welcome to CarbonLens</h1>', unsafe_allow_html=True)
-st.markdown('<p class="subtitle"><strong>Explore, analyze, and reduce your carbon footprint with a special focus on peatlands — vital ecosystems for carbon sequestration.</strong></p>', unsafe_allow_html=True)
+st.markdown('<h1 class="title">Welcome to CarbonLens🔍</h1>', unsafe_allow_html=True)
+# st.markdown('<p class="subtitle"><strong>Explore, analyze, and reduce your carbon footprint with a special focus on peatlands — vital ecosystems for carbon sequestration.</strong></p>', unsafe_allow_html=True)
+st.markdown('<p class="subtitle"><strong>Explore various solutions for carbon sequestration, footprint management, and offsetting.</strong></p>', unsafe_allow_html=True)
 
 features = [
     ("🌾", "Peatland Health Analysis", "Understand the health of peatlands, crucial for carbon sequestration and ecosystem balance."),
-    ("💬", "Peatland Chatbot", "Ask questions about peatlands, conservation, and carbon sequestration with our intelligent chatbot."),
-    ("🌍", "Carbon Footprint Calculator", "Calculate your personal or business carbon footprint and identify key emission sources."),
-    ("📊", "Footprint Analysis", "Input your daily schedule to get tailored recommendations to reduce your footprint."),
+    ("💬", "Peatland Chatbot", "Ask questions about peatlands, their conservation, and carbon sequestration with our intelligent chatbot."),
+    ("🌍", "Carbon Footprint Calculator", "Calculate your carbon footprint by providing data on consumption, travel, etc.and identify key emission sources."),
+    ("📊", "Footprint Analyzer", "Input your daily schedule to get emission reports and tailored recommendations to reduce your footprint."),
     ("🏢", "Business Footprint Reduction", "Enter your business type to receive customized sustainable practices."),
-    ("🌱", "Carbon Offsetting Projects", "Discover verified projects to support and offset your carbon emissions."),
+    ("🌱", "Carbon Offsetting Projects Recommender", "Discover verified projects to support and offset your carbon emissions."),
 ]
 
 # Create cards in 2 columns

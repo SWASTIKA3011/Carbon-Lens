@@ -49,49 +49,97 @@
 # elif page == "Carbon Credits":
 #     credit6.credit()
 
+# import streamlit as st
+# from PIL import Image
+# image = Image.open("./pages/CarbonLens.png")
+# st.sidebar.image(image, use_container_width=True)
+
+
+# page1 = st.Page(
+#     title = "Homepage",
+#     icon = "🏠",
+#     page = "pages/homepage.py"
+# )
+
+# page2 = st.Page(
+# title = "Peatland Monitoring",
+# icon = "📊",
+# page = "pages/peatland2.py"
+# )
+
+# page3 = st.Page(
+# title = "Chatbot",
+# icon = "⚙️",
+# page = "pages/chatbot2.py"
+# )
+
+# page4 = st.Page(
+# title = "Footprint Calculator",
+# icon = "⚙️",
+# page = "pages/footprint3.py"
+# )
+
+# page5 = st.Page(
+# title = "Analyzer",
+# icon = "🏠",
+# page = "pages/nlp2.py"
+# )
+
+# page6 = st.Page(
+# title = "Business",
+# icon = "📊",
+# page = "pages/business.py"
+# )
+
+# page7 = st.Page(
+# title = "Offset",
+# icon = "⚙️",
+# page = "pages/credit6.py")
+
+# pg = st.navigation(pages=[page1,page2,page3,page4,page5,page6,page7])
+
+# pg.run()
+
+
 import streamlit as st
+from PIL import Image
+import os
 
-page1 = st.Page(
-    title = "Homepage",
-    icon = "🏠",
-    page = "pages/homepage.py"
-)
+def inject_css():
+    st.markdown(f"""
+    <style>
+        [data-testid="stSidebarNav"] {{
+            padding-top: 50px;  
+            background-image: url("data:image/png;base64,{img_to_base64()}");
+            background-repeat: no-repeat;
+            background-position: 0px -70px;
+            background-size: 180px;
+        }}
+    </style>
+    """, unsafe_allow_html=True)
 
-page2 = st.Page(
-title = "Peatland Monitoring",
-icon = "📊",
-page = "pages/peatland2.py"
-)
+def img_to_base64():
+    try:
+        img = Image.open(os.path.abspath("./pages/CarbonLens.png"))
+        from io import BytesIO
+        import base64
+        buffered = BytesIO()
+        img.save(buffered, format="PNG")
+        return base64.b64encode(buffered.getvalue()).decode()
+    except Exception as e:
+        st.error(f"Image error: {e}")
+        return ""
 
-page3 = st.Page(
-title = "Chatbot",
-icon = "⚙️",
-page = "pages/chatbot2.py"
-)
+inject_css()
 
-page4 = st.Page(
-title = "Footprint Calculator",
-icon = "⚙️",
-page = "pages/footprint3.py"
-)
+pages = [
+    st.Page(title="Homepage", icon="🏠", page="pages/homepage.py"),
+    st.Page(title="Peatland Monitoring", icon="📊", page="pages/peatland2.py"),
+    st.Page(title="Peatland Chatbot", icon="⚙️", page="pages/chatbot2.py"),
+    st.Page(title="Carbon Footprint Calculator", icon="🧮", page="pages/footprint3.py"),
+    st.Page(title="Individual Footprint Analyzer", icon="🔍", page="pages/nlp2.py"),
+    st.Page(title="Business Footprint Analyzer", icon="💼", page="pages/business.py"),
+    st.Page(title="Offset Projects Recommender", icon="♻️", page="pages/credit6.py")
+]
 
-page5 = st.Page(
-title = "Analyzer",
-icon = "🏠",
-page = "pages/nlp2.py"
-)
-
-page6 = st.Page(
-title = "Business",
-icon = "📊",
-page = "pages/business.py"
-)
-
-page7 = st.Page(
-title = "Offset",
-icon = "⚙️",
-page = "pages/credit6.py")
-
-pg = st.navigation(pages=[page1,page2,page3,page4,page5,page6,page7])
-
-pg.run()
+st.navigation(pages).run()

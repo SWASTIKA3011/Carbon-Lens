@@ -123,15 +123,27 @@ with tab1:
     </style>
     """, unsafe_allow_html=True)
 
+    # st.markdown("""
+    # <div style='background: rgba(250, 250, 250, 0.5); padding: 1.5rem; border-radius: 12px; margin: 1rem 0;'>
+    # <h4 style='color: #2e8b57;'>🔍 Why This Matters</h4>
+    # <ul style='margin-top: 0.5rem;'>
+    # <li>🌱 <strong>Decode satellite signals</strong> into actionable conservation plans</li>
+    # <li>🔥 <strong>Predict fire risks</strong> through moisture pattern analysis</li>
+    # <li>💧 <strong>Track water table changes</strong> threatening carbon storage</li>
+    # <li>📈 <strong>Quantify restoration progress</strong> with benchmark comparisons</li>
+    # <li>🌍 <strong>Analyse carbon sequestration</strong> potential for climate projects</li>
+    # </ul>
+    # </div>
+    # """, unsafe_allow_html=True)
     st.markdown("""
     <div style='background: rgba(250, 250, 250, 0.5); padding: 1.5rem; border-radius: 12px; margin: 1rem 0;'>
-    <h4 style='color: #2e8b57;'>🔍 Why This Matters</h4>
+    <h4 style='color: #2e8b57; text-align: center;'>🔍 Why This Matters</h4>
     <ul style='margin-top: 0.5rem;'>
-    <li>🌱 <strong>Decode satellite signals</strong> into actionable conservation plans</li>
-    <li>🔥 <strong>Predict fire risks</strong> through moisture pattern analysis</li>
-    <li>💧 <strong>Track water table changes</strong> threatening carbon storage</li>
-    <li>📈 <strong>Quantify restoration progress</strong> with benchmark comparisons</li>
-    <li>🌍 <strong>Analyse carbon sequestration</strong> potential for climate projects</li>
+    <li>Decode satellite images into actionable conservation plans</li>
+    <li>Predict fire risks through moisture pattern analysis</li>
+    <li>Track water table changes threatening carbon storage</li>
+    <li>Quantify restoration progress with benchmark comparisons</li>
+    <li>Analyse carbon sequestration potential for climate projects</li>
     </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -387,11 +399,15 @@ with tab10:
 
         col1, col2 = st.columns(2)
         with col1:
-            name = st.text_input("🆔 Full Name", placeholder="Enter your name")
-            phone = st.text_input("📞 Phone Number", placeholder="Enter your phone")
+            # name = st.text_input("🆔 Full Name", placeholder="Enter your name")
+            # phone = st.text_input("📞 Phone Number", placeholder="Enter your phone")
+            name = st.text_input("Full Name", placeholder="Enter your name")
+            phone = st.text_input("Phone Number", placeholder="Enter your phone")
         with col2:
-            email = st.text_input("📧 Email Address", placeholder="Enter your email")
-            id_proof = st.file_uploader("🆔 Upload ID Proof (PDF, JPG, PNG)", type=["pdf", "jpg", "png"])
+            # email = st.text_input("📧 Email Address", placeholder="Enter your email")
+            # id_proof = st.file_uploader("🆔 Upload ID Proof (PDF, JPG, PNG)", type=["pdf", "jpg", "png"])
+            email = st.text_input("Email Address", placeholder="Enter your email")
+            id_proof = st.file_uploader("Upload ID Proof (PDF, JPG, PNG)", type=["pdf", "jpg", "png"])
 
         choice = st.radio('Select one option:', ['Instant Analysis', 'Time Series Detailed Analysis'], horizontal=True)
 
