@@ -312,13 +312,13 @@ with tab7:
     col1, col2, col3 = st.columns([1, 1, 1])
 
     with col1:
-        st.image("/Users/swastika/IIRS/ndmi_diff_map.png", caption="NDMI Difference Map", use_container_width=True)
+        st.image("./ndmi_diff_map.png", caption="NDMI Difference Map", use_container_width=True)
                 
     with col2:
-        st.image("/Users/swastika/IIRS/ndvi_diff_map.png", caption="NDVI Difference Map", use_container_width=True)
+        st.image("./ndvi_diff_map.png", caption="NDVI Difference Map", use_container_width=True)
 
     with col3:
-        st.image("/Users/swastika/IIRS/ndwi_diff_map.png", caption="NDWI Difference Map", use_container_width=True)
+        st.image("./ndwi_diff_map.png", caption="NDWI Difference Map", use_container_width=True)
 
     col1, col2, col3, col4, col5, col6 = st.columns([0.125,1,0.125,1,0.125,1])
     with col2:
