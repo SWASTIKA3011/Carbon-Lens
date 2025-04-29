@@ -75,7 +75,7 @@ def fit_arima_and_forecast(data, series_name, order=(1, 1, 1), steps=2):
 
 
 def insert_request(name, phone, email, latitude=None, longitude=None, id_proof_data=None, nir_data=None, swir_data=None, red_data=None, green_data=None):
-    DB_PATH = "/Users/swastika/Carbon Footprint App/peatland_requests.db"
+    DB_PATH = "peatland_requests.db"
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
