@@ -6,7 +6,7 @@ from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_chroma import Chroma
+from langchain_chroma import FAISS
 from dotenv import load_dotenv
 
 
@@ -130,16 +130,16 @@ st.markdown(
 
 load_dotenv()
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
-CHROMA_DB_PATH = "./chroma_db"
+FAISS_DB_PATH = "faiss_index"
 
-@st.cache_resource(show_spinner="⚡ Loading Chroma vector store...")
+@st.cache_resource(show_spinner="⚡ Loading Faiss vector store...")
 def get_vectorstore():
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     
-    if os.path.exists(CHROMA_DB_PATH):
-        return Chroma(persist_directory=CHROMA_DB_PATH, embedding_function=embeddings)
+    if os.path.exists(FAISS_DB_PATH):
+        return FAISS.load_local(FAISS_DB_PATH, embeddings, allow_dangerous_deserialization=True)
     else:
-        st.warning("⚠️ No existing Chroma DB found. Creating one...")
+        st.warning("⚠️ No existing Faiss DB found. Creating one...")
 
 vectorstore = get_vectorstore()
 retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 10})
@@ -204,3 +204,46 @@ with main_container:
         ]
         for prompt in sample_prompts:
             st.markdown(f"<div class='sample-prompt'>{prompt}</div>", unsafe_allow_html=True)
+
+
+# @st.cache_resource(show_spinner="⚡ Loading FAISS vector store...")
+# def get_vectorstore():
+#     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+#     faiss_db_path = "./faiss_index"
+
+#     if os.path.exists(faiss_db_path):
+#         vectorstore = FAISS.load_local(faiss_db_path, embeddings, allow_dangerous_deserialization=True)
+#     else:
+#         st.warning("⚠️ No existing FAISS index found. Please create one first.")
+#         vectorstore = None
+
+#     return vectorstore
+
+# from langchain_community.vectorstores import FAISS
+
+# # Assuming you have a list of Documents already
+# docs = [...]  # your documents from PDF or elsewhere
+# embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+
+# # Build FAISS
+# vectorstore = FAISS.from_documents(docs, embeddings)
+
+# # Save it to disk
+# vectorstore.save_local("./faiss_index")
+
+# retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 10})
+
+# @st.cache_resource(show_spinner="⚡ Loading FAISS vector store...")
+# def get_vectorstore():
+#     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    
+#     faiss_db_path = "./faiss_index"
+
+#     if os.path.exists(faiss_db_path):
+#         vectorstore = FAISS.load_local(faiss_db_path, embeddings, allow_dangerous_deserialization=True)
+#     else:
+#         st.warning("⚠️ No existing FAISS index found. Please create one first.")
+#         vectorstore = None
+
+#     return vectorstore
+
