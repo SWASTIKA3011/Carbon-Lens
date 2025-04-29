@@ -233,7 +233,7 @@ uvloop==0.21.0
 wasabi==1.1.3
 watchfiles==1.0.4
 wcwidth==0.2.13
-weasel==0.4.1
+weasel
 websocket-client==1.8.0
 websockets==15.0
 Werkzeug==3.1.3
