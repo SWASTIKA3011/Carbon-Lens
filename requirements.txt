@@ -24,7 +24,7 @@ charset-normalizer==3.4.1
 click==8.1.8
 click-plugins==1.1.1
 cligj==0.7.2
-cloudpathlib==0.21.0
+cloudpathlib
 coloredlogs==15.0.1
 comm==0.2.2
 confection==0.1.5
