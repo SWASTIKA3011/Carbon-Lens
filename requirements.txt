@@ -197,10 +197,10 @@ seaborn==0.13.2
 setuptools==75.8.2
 shellingham==1.5.4
 six==1.17.0
-smart-open==7.1.0
+smart-open==5.2.1
 smmap==5.0.2
 sniffio==1.3.1
-spacy
+spacy==3.7.2
 spacy-legacy==3.0.12
 spacy-loggers==1.0.5
 SQLAlchemy==2.0.38
@@ -215,7 +215,7 @@ tensorboard==2.18.0
 tensorboard-data-server==0.7.2
 tensorflow==2.18.0
 termcolor==2.5.0
-thinc==8.3.4
+thinc==8.2.2
 threadpoolctl==3.5.0
 tokenizers==0.21.0
 toml==0.10.2
