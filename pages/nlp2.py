@@ -13,7 +13,7 @@ GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 nlp = spacy.load("en_core_web_sm")
 
 ########### FOOD ############
-food_df = pd.read_csv("/Users/Swastika/Downloads/35605.csv")
+food_df = pd.read_csv("35605.csv")
 food_df = food_df[[
     "Entity",
     "GHG emissions per kilogram (Poore & Nemecek, 2018)",
@@ -24,7 +24,7 @@ food_df = food_df[[
 food_df["Entity"] = food_df["Entity"].str.lower().str.strip()
 
 ########### CAR ############
-fuel_df = pd.read_excel("/Users/Swastika/Downloads/ghg-conversion-factors-2024-FlatFormat_v1_1.xlsx", sheet_name='Sheet1')
+fuel_df = pd.read_excel("ghg-conversion-factors-2024-FlatFormat_v1_1.xlsx", sheet_name='Sheet1')
 fuel_df = fuel_df[[
     "Level 3",
     "Column Text",
@@ -36,7 +36,7 @@ fuel_df['Column Text'] = fuel_df['Column Text'].apply(lambda x: str(x).lower() i
 car_categories = ["Mini", "Supermini", "Lower medium", "Upper medium", "Executive", "Luxury", "Sports", "Dual purpose 4X4", "MPV"]
 
 ########### FLIGHT ############
-flight_df = pd.read_excel("/Users/Swastika/Downloads/ghg-conversion-factors-2024-FlatFormat_v1_1.xlsx", sheet_name='Sheet2')
+flight_df = pd.read_excel("ghg-conversion-factors-2024-FlatFormat_v1_1.xlsx", sheet_name='Sheet2')
 flight_df = flight_df[[
     "LCA Activity",
     "Emission Factor (kgCO₂e/passenger-km)",
@@ -46,7 +46,7 @@ flight_df['LCA Activity'] = flight_df['LCA Activity'].astype(str).str.lower()
 flight_keywords = {"flight", "airplane", "plane", "air travel", "airline"}
 
 ########### BIKE ############
-df = pd.read_excel("/Users/Swastika/Downloads/ghg-conversion-factors-2024-FlatFormat_v1_1.xlsx", sheet_name='Sheet1')
+df = pd.read_excel("ghg-conversion-factors-2024-FlatFormat_v1_1.xlsx", sheet_name='Sheet1')
 df.columns = df.columns.str.strip()
 df = df[[
     "Level 2",
@@ -58,7 +58,7 @@ df["Level 3"] = df["Level 3"].astype(str).str.lower().str.strip()
 bike_keywords = {"bike", "motorbike", "motorcycle", "scooter"}
 
 ########### WASTE ############
-waste_df = pd.read_excel("/Users/Swastika/Downloads/ghg-emission-factors-hub-2025.xlsx", sheet_name='Sheet1')
+waste_df = pd.read_excel("ghg-emission-factors-hub-2025.xlsx", sheet_name='Sheet1')
 waste_df.columns = waste_df.columns.str.strip()
 waste_df["Material"] = waste_df["Material"].astype(str).str.lower().str.strip()
 waste_materials = set(waste_df["Material"].tolist())
