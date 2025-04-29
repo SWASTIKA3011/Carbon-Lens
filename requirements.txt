@@ -222,7 +222,7 @@ toml==0.10.2
 tornado==6.4.2
 tqdm==4.67.1
 traitlets==5.14.3
-typer==0.15.1
+typer
 typing_extensions==4.12.2
 typing-inspect==0.9.0
 tzdata==2025.1
