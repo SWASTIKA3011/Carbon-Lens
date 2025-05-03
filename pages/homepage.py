@@ -132,6 +132,18 @@ width: fit-content;
 st.markdown('</div>', unsafe_allow_html=True)
 
 
+# Add Footer
+st.markdown(
+    """
+    <footer class="footer">
+        <p>CarbonLens</p>
+        <p>House No. 117, Sohna, Gurugram, India</p>
+        <p>Contact: +91 7015777902 | Email: info@carbonlens.com</p>
+        <p>Domain: <a href="https://carbon-lens.streamlit.app" target="_blank">carbonlens.com</a></p>
+    </footer>
+    """,
+    unsafe_allow_html=True
+)
 
 if __name__ == "__main__":
     if 'page' not in st.session_state:
