@@ -69,6 +69,25 @@ st.markdown(
     .get-started-btn:hover {
         background-color: #388E3C;
     }
+
+    .footer {
+        margin-top: 4rem;
+        padding: 2rem;
+        text-align: center;
+        color: #888;
+        font-size: 0.9rem;
+        border-top: 1px solid #eee;
+    }
+
+    .footer a {
+        color: #888;
+        text-decoration: none;
+    }
+
+    .footer a:hover{
+        color: #4CAF50;
+    }
+    
     </style>
     """,
     unsafe_allow_html=True,
