@@ -223,10 +223,9 @@ with tab1:
             selected_action = st.selectbox("**Choose a common action:**", predefined_actions_PC)
 
             with st.expander("**Want to add extra info?**"):
-                data = pd.read_csv("consumption.csv")
+                data = pd.read_csv("Users/swastika/Final/consumption.csv")
                 data.set_index('product', inplace=True)
-                option = st.selectbox("**Chosen Action**", ["Did not purchase", "Delayed Purchase by more than 6 months", 
-                                      "Delayed Purchase by 1 year", "Purchased recyclable material", "Purchased used"])
+                option = st.selectbox("**Chosen Action**", ["Did not purchase", "Delayed Purchase by 1 year", "Purchased recyclable material", "Purchased used"])
                 if pd.notna(data.loc[selected_action, option]):
                     savings = f"Congratulations! You saved {data.loc[selected_action, option]} kgCO2eq."
                 notes = st.text_input("**Enter any additional notes (optional):**")
