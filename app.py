@@ -145,9 +145,9 @@ inject_css()
 pages = [
     st.Page(title="Homepage", icon="🏠", page="pages/homepage.py"),
     st.Page(title="Carbon Footprint Calculator", icon="🧮", page="pages/footprint3.py"),
+    st.Page(title="Individual Footprint Analyzer", icon="🔍", page="pages/nlp2.py"),
     st.Page(title="Carbon Footprint Simulator", icon="📊", page="simulator.py"),
     st.Page(title="Eco Action Logger", icon="⚙️", page="logger.py"),
-    st.Page(title="Individual Footprint Analyzer", icon="🔍", page="pages/nlp2.py"),
     st.Page(title="Business Footprint Analyzer", icon="💼", page="pages/business.py"),
     st.Page(title="Offset Projects Recommender", icon="♻️", page="pages/credit6.py"),
     st.Page(title="Peatland Monitoring", icon="📊", page="pages/peatland2.py"),
