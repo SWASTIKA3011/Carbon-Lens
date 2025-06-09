@@ -105,7 +105,7 @@ def insert_request(name, phone, email, latitude=None, longitude=None, id_proof_d
         conn.close()
 
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs(["**ℹ️ About**", " ", " ", "**📥 Upload & Analyze**", " ", " ", "**📈 Time Series Analysis**", " ", " ", "**🗺️ Spatial & Clustering Analysis**"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs(["**ℹ️ About**", " ", " ", "**📈 Time Series Analysis**", " ", " ", "**🗺️ Spatial & Clustering Analysis**", " ", " ", "**📥 Upload & Analyze**"])
 
 # --- About Section ---
 with tab1:
@@ -136,11 +136,15 @@ with tab1:
     # </div>
     # """, unsafe_allow_html=True)
     st.markdown("""
-    <div style='background: rgba(250, 250, 250, 0.5); padding: 1.5rem; border-radius: 12px;'>
-    <h4 style='color: #2e8b57; text-align:center'>🌱 Why We Offer This Service</h4>
-    <p style = 'text-align:justify;'>Peatlands are the unsung heroes of carbon storage, holding <strong>twice as much carbon</strong> as all world forests combined. 
-    Yet they remain under-monitored and undervalued, leading to poor sequestration potential. Our mission is to arm conservationists with 
-    satellite intelligence previously only available to governments and large corporations.</p>
+    <div style='background: rgba(250, 250, 250, 0.5); padding: 1.5rem; border-radius: 12px; margin: 1rem 0;'>
+    <h4 style='color: #2e8b57; text-align: center;'>🔍 Why This Matters</h4>
+    <ul style='margin-top: 0.5rem;'>
+    <li>Decode satellite images into actionable conservation plans</li>
+    <li>Predict fire risks through moisture pattern analysis</li>
+    <li>Track water table changes threatening carbon storage</li>
+    <li>Quantify restoration progress with benchmark comparisons</li>
+    <li>Analyse carbon sequestration potential for climate projects</li>
+    </ul>
     </div>
     """, unsafe_allow_html=True)
 
@@ -151,7 +155,7 @@ with tab1:
     with col1:
         st.markdown("""
         <div style='background: rgba(250, 250, 250, 0.5); padding: 1.5rem; border-radius: 12px; height: 100%;'>
-        <h4 style='color: #2e8b57; text-align: center;'>Key Stakeholders</h4>
+        <h4 style='color: #2e8b57;'>Key Stakeholders</h4>
         <ul style='margin-top: 0.5rem;'>
         <li><strong>Conservation NGOs:</strong> Monitor restoration projects</li>
         <li><strong>Government Agencies:</strong> Enforce protection policies</li>
@@ -165,7 +169,7 @@ with tab1:
     with col2:
         st.markdown("""
         <div style='background: rgba(250, 250, 250, 0.5); padding: 1.5rem; border-radius: 12px; height: 100%;'>
-        <h4 style='color: #2e8b57; text-align: center;'>Global Impact Vision</h4>
+        <h4 style='color: #2e8b57;'>Global Impact Vision</h4>
         <ul style='margin-top: 0.5rem;'>
         <li><strong>Satellite image data</strong> ↔ Actionable insights</li>
         <li><strong>Academic research</strong> ↔ Field implementation</li>
@@ -177,17 +181,13 @@ with tab1:
         """, unsafe_allow_html=True)
 
     st.markdown("---")
-    
+
     st.markdown("""
-    <div style='background: rgba(250, 250, 250, 0.5); padding: 1.5rem; border-radius: 12px; margin: 1rem 0;'>
-    <h4 style='color: #2e8b57; text-align: center;'>🔍 What we offer in this service?</h4>
-    <ul style='margin-top: 0.5rem; margin-left: 5.5rem;'>
-    <li>Decode satellite images into actionable conservation plans</li>
-    <li>Predict fire risks through moisture pattern analysis</li>
-    <li>Track water table changes threatening carbon storage</li>
-    <li>Quantify restoration progress with benchmark comparisons</li>
-    <li>Analyse carbon sequestration potential for climate projects</li>
-    </ul>
+    <div style='background: rgba(250, 250, 250, 0.5); padding: 1.5rem; border-radius: 12px;'>
+    <h4 style='color: #2e8b57;'>🌱 Why We Offer This Service</h4>
+    <p>Peatlands are the unsung heroes of carbon storage, holding <strong>twice as much carbon</strong> as all world forests combined. 
+    Yet they remain under-monitored and undervalued. Our mission is to arm conservationists with 
+    <strong> satellite intelligence</strong> previously only available to governments and large corporations.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -219,7 +219,7 @@ with tab1:
 
 
 # --- Time Series Analysis ---
-with tab7:
+with tab4:
     st.info("🔍 This analysis is based on remote sensing data from **Riau, Indonesia**.")
     # st.markdown("## 📉 ARIMA Time Series Forecasting")
     st.markdown(
@@ -288,7 +288,7 @@ with tab7:
         st.plotly_chart(fig_ndmi, use_container_width=True)
 
 # --- Spatial and Clustering Analysis ---
-with tab10:
+with tab7:
     st.info("🔍 This analysis is based on remote sensing data from **Riau, Indonesia**.")
     # st.markdown("## 🌍 Spatial and Clustering Analysis")
     st.markdown(
@@ -389,9 +389,9 @@ with tab10:
             )
     st.markdown("<br><hr style='border:1px solid #ccc'><br>", unsafe_allow_html=True)
 
-with tab4:
+with tab10:
     st.markdown("<h3 style='text-align: center;'>📝 Submit Your Request for Peatland Analysis</h3>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center;'><strong>Want analysis for your region?</strong> Choose a peatland below or enter coordinates.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'><strong>Want the same analysis for your region?</strong> Choose a peatland below or enter coordinates.</p>", unsafe_allow_html=True)
 
     # --- Form ---
     with st.form("user_details_form"):
@@ -484,33 +484,11 @@ with tab4:
                 ndwi = compute_index(nir1, green)
 
                 def print_stats(index, name):
-                    # st.write(f"--- {name} ---")
-                    # st.write("Min:", np.min(index))
-                    # st.write("Max:", np.max(index))
-                    # st.write("Mean:", np.mean(index))
-                    # print()
-                    # stats_html = f"""
-                    # <div style="border:1px solid #4F8BF9; border-radius:8px; padding:16px; margin-bottom:16px; background-color:#f7fafd;">
-                    #     <h4 style="color:#4F8BF9; margin-bottom:12px;">{name} Statistics</h4>
-                    #     <ul style="list-style-type:none; padding-left:0;">
-                    #         <li><b>Min:</b> {np.min(index):.4f}</li>
-                    #         <li><b>Max:</b> {np.max(index):.4f}</li>
-                    #         <li><b>Mean:</b> {np.mean(index):.4f}</li>
-                    #     </ul>
-                    # </div>
-                    # """
-                    # st.markdown(stats_html, unsafe_allow_html=True)
-                    stats_html = f"""
-                    <div style="border:1px solid #2e8b57; border-radius:8px; padding:16px; margin-bottom:16px; background-color: rgba(250, 250, 250, 0.5); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
-                        <h5 style="color:#2e8b57; margin-bottom:8px;">{name} Statistics</h5>
-                        <ul>
-                            <li><b>Min:</b> {np.min(index):.4f}</li>
-                            <li><b>Max:</b> {np.max(index):.4f}</li>
-                            <li><b>Mean:</b> {np.mean(index):.4f}</li>
-                        </ul>
-                    </div>
-                    """
-                    st.markdown(stats_html, unsafe_allow_html=True)
+                    st.write(f"--- {name} ---")
+                    st.write("Min:", np.min(index))
+                    st.write("Max:", np.max(index))
+                    st.write("Mean:", np.mean(index))
+                    print()
 
                 print_stats(ndvi, "NDVI")
                 print_stats(ndmi, "NDMI")
