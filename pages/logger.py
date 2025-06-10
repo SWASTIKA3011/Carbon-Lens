@@ -279,7 +279,7 @@ with tab4:
         if st.button("View my Actions"):
             past_actions = get_user_actions(user_code)
             if past_actions:
-                for ts, act in past_actions:
+                for ts, act, action_description in past_actions:
                     st.markdown(f"📅 `{ts[:10]}` — {act}")
             else:
                 st.info("No actions found for your code.")
