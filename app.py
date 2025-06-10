@@ -148,7 +148,7 @@ pages = [
     st.Page(title="Individual Footprint Analyzer", icon="🔍", page="pages/nlp2.py"),
     st.Page(title="Carbon Footprint Simulator", icon="🕹️", page="pages/simulator.py"),
     st.Page(title="Eco Action Logger", icon="📘", page="pages/logger.py"),
-    st.Page(title="Business Footprint Analyzer", icon="💼", page="pages/business.py"),
+    st.Page(title="Business Sustainability Recommender", icon="💼", page="pages/business.py"),
     st.Page(title="Offset Projects Recommender", icon="♻️", page="pages/credit6.py"),
     st.Page(title="Peatland Monitoring", icon="📊", page="pages/peatland2.py"),
     st.Page(title="Peatland Chatbot", icon="⚙️", page="pages/chatbot2.py")
